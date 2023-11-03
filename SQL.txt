@@ -1,0 +1,22 @@
+CREATE TABLE table1 (
+  LastName VARCHAR(255),
+  StudentID INTEGER,
+  FirstName VARCHAR(255),
+  PRIMARY KEY (StudentID)
+);
+CREATE TABLE table2 (
+  Course VARCHAR(255),
+  CourseEnd DATE,
+  CourseStart DATE,
+  Professor VARCHAR(255),
+  ProfessorEmail VARCHAR(255),
+  PRIMARY KEY (Course)
+);
+CREATE TABLE table3 (
+  Course VARCHAR(255),
+  StudentID INTEGER,
+  classRoom DATE,
+  FOREIGN KEY (StudentID) REFERENCES table1(StudentID),
+  FOREIGN KEY (Course) REFERENCES table2(Course)
+);
+Highest normal form of the input table: 3NF
